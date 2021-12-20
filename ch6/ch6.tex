@@ -1,0 +1,52 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb, amsthm}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\begin{description}
+	\item Suppose $T\in L(V)$. Prove that if $U_{1},...,U_{m}$ are subspaces of $V$ invariant under $T$, then $U_{1}+,...,+U_{m}$ is invariant under $T$. 
+		\begin{proof}
+		Let $v\in U_{1}+,...,+U_{m}$. Then $Tv$ can be written as $T(\alpha_{1} u_{1}+...,+\alpha_{m} u_{m})$, where $u_{j} \in U_{j}$ and $\alpha_{j} \in \mathbb{F}$. Then $Tv = T(\alpha_{1} u_{1}) +...+ T(\alpha_{m} u_{m})= \beta_{1} u_{1} + ... + \beta_{m} u_{m} \in  U_{1}+,...,+U_{m}$. Therefore $U_{1}+,...,+U_{m}$ is invariant under $T$.
+		\end{proof}
+
+	\item Suppose $T \in L(V) $. Prove that the intersection of any collection of subspaces of $V$ invariant under $T$ is invariant under $T$.
+		\begin{proof}
+		 Let $v \in V_{1} \cap ... \cap V_{m} $, where  $V_{1}, ..., V_{m}$ are subspaces invariant under $T$. Then $v \in V_{j}$ for some $ V_{j}\in V_{1}, ..., V_{m}$. Then $v$ is invariant under $T$. 
+			
+		\end{proof}
+	\item Suppose $S,T \in L(V)$ are such that $ST = TS$. Prove that $null(T- \lambda I)$ is invariant under $S$ for every $\lambda \in \mathbb{F}$.
+		\begin{proof}
+		Let $v \in null(T- \lambda I)$. Then $ Tv = \lambda v$ (definition of eigenvector). Then $STv = TSv \implies S\lambda v = TSv \implies \lambda (Sv) = T(Sv)$. Therefore $Sv \in null(T- \lambda I)$, so $null(T- \lambda I)$  	 is invariant under $S$.
+			
+		\end{proof}
+	
+	\item Suppose $ T \in L(V)$ and dim range $T = k$. Prove that $T$ has at most $ k + 1 $ distinct eigenvalues.
+	\begin{proof}
+		stuff
+		
+	\end{proof}
+	\item Suppose $T \in L(V) $ is invertible and $ \lambda \in \mathbb{F} \ {0}$. Prove that $\lambda$ is an eigenvalue of $T$ iff $ \frac{1}{\lambda} $ is an eigenvalue of $T^{-1}$.
+		\begin{proof}
+			Let $v \in V$ be an eigenvector of $T$ with eigenvalue $\lambda$. Then $ Tv = \lambda b $. Apply $T^{-1}$ to both sides. $ T^{-1} Tv = T^{-1} \lambda v \implies Iv = \lambda T^{-1} v \implies \frac{1}{\lambda} v = T^{-1} v$. Therefore $ \frac{1}{\lambda} $ is an eigenvalue of $ T^{-1} $.
+		\end{proof}
+			
+
+\end{description}	
+\end{document}
